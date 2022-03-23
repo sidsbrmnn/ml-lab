@@ -44,10 +44,7 @@ for i in range(epoch):
     d_hidden = EH * sigmoid_derivative(hidden_layer_output)
 
     wout += hidden_layer_output.T.dot(d_output) * learnrate
-    bout += np.sum(d_output, axis=0, keepdims=True) * learnrate
-
     wh += X.T.dot(d_hidden) * learnrate
-    bh += np.sum(d_hidden, axis=0, keepdims=True) * learnrate
 
 # Print prediction
 print(output)
